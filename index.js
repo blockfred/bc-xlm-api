@@ -10,6 +10,7 @@ const CC_API_DAY = 'https://min-api.cryptocompare.com/data/histoday'
 
 
 let CACHE = {}
+let CACHE_ROUND = 180
 
 const getCacheData = async (quote, start, scale) => {
 }
@@ -32,7 +33,7 @@ const getData = async (scale, quote) => {
 
 const getCacheKey = (url) => {
   let now = Date.now()/1000
-  let roundedTime = now - now % 180
+  let roundedTime = now - now % CACHE_ROUND
   return `${url}:${roundedTime}`
 }
 
