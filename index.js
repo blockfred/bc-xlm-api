@@ -23,8 +23,10 @@ const getData = async (scale, quote) => {
       return fetchData(CC_API_HOUR, 'XLM', toSym, 168, 1)
     case '7200':
       return fetchData(CC_API_HOUR, 'XLM', toSym, 730, 2)
-    default:
+    case '86400':
       return fetchData(CC_API_DAY, 'XLM', toSym, 365, 1)
+    default:
+      return fetchData(CC_API_DAY, 'XLM', toSym, 655, 5)
   }
 }
 
