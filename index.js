@@ -68,6 +68,7 @@ module.exports = async (req, res) => {
   const { quote, start, scale, base } = params
 
   console.log('params', params)
+  res.setHeader('Access-Control-Allow-Origin', '*')
 
   if (base && base.toLowerCase() === 'xlm') {
     const data = await getData(scale, quote)
